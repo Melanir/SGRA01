@@ -11,21 +11,22 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode
 @Entity
-@Table(name = "TbWorkArea")
+@Table(name = "TbAreasTrabajos")
 
 public class WorkArea {
 
     @Id
+    @Column(name = "IdAreasTrabajos", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
 
-    @Column(length = 25, nullable = false)
+    @Column(name = "AreaTrabajo", length = 25, nullable = false)
     private String WorkArea;
 
-    @Column
+    @Column (name = "Cpacidad")
     private Integer Capacity;
 
-    @Column(length = 1, nullable = false)
+    @Column(name = "Disponibilidad", length = 1, nullable = false)
     private String Availability;
 
 }

@@ -11,27 +11,28 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode
 @Entity
-@Table(name = "TeacherAvailability")
+@Table(name = "TbDisponibilidadDocente")
 
 public class TeacherAvailability {
 
     @Id
+    @Column(name = "IdDisponibilidadDocente", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer Id;
 
-    @Column(nullable = false)
-    private Integer teacherId;
+    @Column(name = "IdDocente", nullable = false)
+    private Integer TeacherId;
 
-    @Column(nullable = false)
-    private Integer timeSlotId;
+    @Column(name = "IdFranjaHorario", nullable = false)
+    private Integer TimeSlotId;
 
-    @Column(nullable = false)
-    private Integer periodId;
+    @Column(name = "IdPeriodo", nullable = false)
+    private Integer PeriodId;
 
-    @Column(nullable = false)
-    private Short dayOfWeek;
+    @Column(name = "DiaSemana", nullable = false)
+    private Short DayOfWeek;
 
-    @Column(nullable = false)
-    private Boolean active = true;
+    @Column(name = "Estado", nullable = false)
+    private Boolean Active = true;
 
 }

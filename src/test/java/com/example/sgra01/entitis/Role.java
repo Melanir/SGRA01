@@ -11,18 +11,19 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode
 @Entity
-@Table(name = "TbRole")
+@Table(name = "TbRol")
 
 public class Role {
 
     @Id
+    @Column(name = "IdRol", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
 
-    @Column(length = 15, nullable = false)
+    @Column(name = "Rol", length = 15, nullable = false)
     private String Role;
 
-    @Column(nullable = false)
+    @Column(name = "Estado", nullable = false)
     private Boolean Active;
 
 }

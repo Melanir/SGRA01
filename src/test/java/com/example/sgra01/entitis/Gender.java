@@ -5,29 +5,25 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import java.time.LocalTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @EqualsAndHashCode
 @Entity
-@Table(name = "TbFranjasHorarias")
+@Table(name = "TbGeneros")
 
-public class TimeSlot {
+public class Gender {
 
     @Id
-    @Column(name = "IdFRanjaHoraria", nullable = false)
+    @Column(name = "IdGenero",nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
 
-    @Column(name = "HorarioInicio", nullable = false)
-    private LocalTime StartTime;
-
-    @Column(name = "HorarioFin", nullable = false)
-    private LocalTime EndTime;
+    @Column(name = "NombreGenero" ,length = 15, nullable = false)
+    private String genderName;
 
     @Column(name = "Estado", nullable = false)
-    private Boolean Active = true;
+    private Boolean active = true;
 
 }

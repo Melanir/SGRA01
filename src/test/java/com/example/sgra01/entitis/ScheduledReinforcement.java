@@ -13,30 +13,31 @@ import java.time.LocalTime;
 @Data
 @EqualsAndHashCode
 @Entity
-@Table(name = "TbScheduledReinforcement")
+@Table(name = "TbRefuerzosProgramados")
 
 public class ScheduledReinforcement {
 
     @Id
+    @Column(name = "IdRefuerzoProgramado", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer Id;
 
-    @Column(nullable = false)
-    private Integer sessionTypeId;
+    @Column(name = "IdTipoSesion", nullable = false)
+    private Integer SessionTypeId;
 
-    @Column(nullable = false)
-    private Integer modalityId;
+    @Column(name = "IdModalidad", nullable = false)
+    private Integer ModalityId;
 
-    @Column(nullable = false)
-    private LocalTime estimatedTime;
+    @Column(name = "TiempoEstimado", nullable = false)
+    private LocalTime EstimatedTime;
 
-    @Column(length = 200)
-    private String reason;
+    @Column(name = "Motivo", length = 200)
+    private String Reason;
 
-    @Column
-    private LocalDateTime newSchedule;
+    @Column (name = "HorarioNuevo")
+    private LocalDateTime NewSchedule;
 
-    @Column(length = 2, nullable = false, columnDefinition = "char(2) default 'P' check (Estado in ('P','RP','R'))")
-    private String status = "P";
+    @Column(name = "Estado", length = 2, nullable = false, columnDefinition = "char(2) default 'P' check (Estado in ('P','RP','R'))")
+    private String Status = "P";
 
 }

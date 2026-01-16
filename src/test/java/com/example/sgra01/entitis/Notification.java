@@ -12,24 +12,25 @@ import java.time.LocalDateTime;
 @Data
 @EqualsAndHashCode
 @Entity
-@Table(name = "TbNotification")
+@Table(name = "TbNotificacion")
 
 public class Notification {
 
     @Id
+    @Column(name = "IdNotificacion", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
 
-    @Column(nullable = false)
+    @Column(name = "IdUsuario", nullable = false)
     private Integer IdUser;
 
-    @Column(length = 100, nullable = false)
+    @Column(name = "Titulo", length = 100, nullable = false)
     private String Title;
 
-    @Column(length = 100, nullable = false)
+    @Column(name = "Mensaje", length = 100, nullable = false)
     private String Message;
 
-    @Column(nullable = false)
+    @Column(name = "FechaEnvio", nullable = false)
     private LocalDateTime DateSent;
 
 }

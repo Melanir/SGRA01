@@ -1,31 +1,35 @@
 package com.example.sgra01.entitis;
 
 import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import java.time.LocalTime;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @EqualsAndHashCode
 @Entity
-@Table(name = "TbFranjasHorarias")
+@Table(name = "TbPeriodos")
 
-public class TimeSlot {
+public class Period {
 
     @Id
-    @Column(name = "IdFRanjaHoraria", nullable = false)
+    @Column(name = "IdPeriodo",nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
 
-    @Column(name = "HorarioInicio", nullable = false)
-    private LocalTime StartTime;
+    @Column(name = "Periodo", length = 10, nullable = false)
+    private String Period;
 
-    @Column(name = "HorarioFin", nullable = false)
-    private LocalTime EndTime;
+    @Column(name = "FechaInicio", nullable = false)
+    private LocalDate StartDate;
+
+    @Column(name = "FechaFin", nullable = false)
+    private LocalDate EndDate;
 
     @Column(name = "Estado", nullable = false)
     private Boolean Active = true;
